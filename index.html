@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <base target="_top">
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        padding: 50px;
+      }
+      #message {
+        margin-top: 20px;
+        font-size: 1.2em;
+        display: none;
+      }
+      #spinner {
+        margin-top: 10px;
+        display: none;
+        border: 4px solid #f3f3f3;
+        border-top: 4px solid #333;
+        border-radius: 50%;
+        width: 30px;
+        height: 30px;
+        animation: spin 1s linear infinite;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+      }
+      button {
+        font-size: 1.2em;
+        padding: 10px 20px;
+        border: none;
+        background-color: #0078d4;
+        color: white;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+      button:hover {
+        background-color: #005fa3;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Welcome to Your Online Exam</h2>
+    <p>Click the button below to begin.</p>
+    <button onclick="startExam()">Start Exam</button>
+    
+    <div id="message">Opening your exam paper...</div>
+    <div id="spinner"></div>
+
+    <script>
+      function startExam() {
+        const forms = [
+          "https://forms.office.com/r/abc123", // Replace with Form A
+          "https://forms.office.com/r/def456", // Replace with Form B
+          "https://forms.office.com/r/ghi789"  // Replace with Form C
+        ];
+        const randomIndex = Math.floor(Math.random() * forms.length);
+        const selectedForm = forms[randomIndex];
+
+        document.querySelector("button").disabled = true;
+        document.getElementById("message").style.display = "block";
+        document.getElementById("spinner").style.display = "block";
+
+        setTimeout(() => {
+          window.location.href = selectedForm;
+        }, 2000);
+      }
+    </script>
+  </body>
+</html>
