@@ -1,47 +1,11 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <base target="_top">
-    <style>
-      body {
-        font-family: Arial, sans-serif;
-        text-align: center;
-        padding: 50px;
-      }
-      #message {
-        margin-top: 20px;
-        font-size: 1.2em;
-        display: none;
-      }
-      #spinner {
-        margin-top: 10px;
-        display: none;
-        border: 4px solid #f3f3f3;
-        border-top: 4px solid #333;
-        border-radius: 50%;
-        width: 30px;
-        height: 30px;
-        animation: spin 1s linear infinite;
-        margin-left: auto;
-        margin-right: auto;
-      }
-      @keyframes spin {
-        0% { transform: rotate(0deg); }
-        100% { transform: rotate(360deg); }
-      }
-      button {
-        font-size: 1.2em;
-        padding: 10px 20px;
-        border: none;
-        background-color: #0078d4;
-        color: white;
-        border-radius: 5px;
-        cursor: pointer;
-      }
-      button:hover {
-        background-color: #005fa3;
-      }
-    </style>
+    <link rel="stylesheet" href="styling.css" />
+    <title>Online Exam</title>
   </head>
   <body>
     <h2>Welcome to Your Online Exam</h2>
@@ -54,9 +18,9 @@
     <script>
       function startExam() {
         const forms = [
-          "https://forms.office.com/Pages/ResponsePage.aspx?id=MQUmTJOZ3UWuy7-8WpZRbfIHKZs6kJtKs0PKM4LJiuVUNE1BQUs3TEFQMVRVUzQ0SDBGQ09RUENIMC4u", // Replace with Form A
-          "https://forms.office.com/Pages/ResponsePage.aspx?id=MQUmTJOZ3UWuy7-8WpZRbfIHKZs6kJtKs0PKM4LJiuVUMVk1TVZSQUMwUEQ0T0gwTEEyTVlDVlJBRy4u", // Replace with Form B
-          "https://forms.office.com/Pages/ResponsePage.aspx?id=MQUmTJOZ3UWuy7-8WpZRbfIHKZs6kJtKs0PKM4LJiuVUQVZNTzlTN1NOT0E3TFpCSk1BWjUxUkZaNi4u"  // Replace with Form C
+          "https://forms.office.com/Pages/ResponsePage.aspx?id=MQUmTJOZ3UWuy7-8WpZRbfIHKZs6kJtKs0PKM4LJiuVUNE1BQUs3TEFQMVRVUzQ0SDBGQ09RUENIMC4u",
+          "https://forms.office.com/Pages/ResponsePage.aspx?id=MQUmTJOZ3UWuy7-8WpZRbfIHKZs6kJtKs0PKM4LJiuVUMVk1TVZSQUMwUEQ0T0gwTEEyTVlDVlJBRy4u",
+          "https://forms.office.com/Pages/ResponsePage.aspx?id=MQUmTJOZ3UWuy7-8WpZRbfIHKZs6kJtKs0PKM4LJiuVUQVZNTzlTN1NOT0E3TFpCSk1BWjUxUkZaNi4u"
         ];
         const randomIndex = Math.floor(Math.random() * forms.length);
         const selectedForm = forms[randomIndex];
