@@ -1,38 +1,39 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <base target="_top">
-    <link rel="stylesheet" href="styling.css" />
-    <title>Online Exam</title>
-  </head>
-  <body>
-    <h2>Welcome to Your Online Exam</h2>
-    <p>Click the button below to begin.</p>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Online Exam</title>
+  <link rel="stylesheet" href="styling.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <h1>Welcome to Your Online Exam</h1>
+    <p>Please click the button below to begin your exam.</p>
     <button onclick="startExam()">Start Exam</button>
-    
     <div id="message">Opening your exam paper...</div>
     <div id="spinner"></div>
+  </div>
 
-    <script>
-      function startExam() {
-        const forms = [
-          "https://forms.office.com/Pages/ResponsePage.aspx?id=MQUmTJOZ3UWuy7-8WpZRbfIHKZs6kJtKs0PKM4LJiuVUNE1BQUs3TEFQMVRVUzQ0SDBGQ09RUENIMC4u",
-          "https://forms.office.com/Pages/ResponsePage.aspx?id=MQUmTJOZ3UWuy7-8WpZRbfIHKZs6kJtKs0PKM4LJiuVUMVk1TVZSQUMwUEQ0T0gwTEEyTVlDVlJBRy4u",
-          "https://forms.office.com/Pages/ResponsePage.aspx?id=MQUmTJOZ3UWuy7-8WpZRbfIHKZs6kJtKs0PKM4LJiuVUQVZNTzlTN1NOT0E3TFpCSk1BWjUxUkZaNi4u"
-        ];
-        const randomIndex = Math.floor(Math.random() * forms.length);
-        const selectedForm = forms[randomIndex];
+  <script>
+    function startExam() {
+      const forms = [
+        "https://forms.office.com/Pages/ResponsePage.aspx?id=MQUmTJOZ3UWuy7-8WpZRbfIHKZs6kJtKs0PKM4LJiuVUNE1BQUs3TEFQMVRVUzQ0SDBGQ09RUENIMC4u",
+        "https://forms.office.com/Pages/ResponsePage.aspx?id=MQUmTJOZ3UWuy7-8WpZRbfIHKZs6kJtKs0PKM4LJiuVUMVk1TVZSQUMwUEQ0T0gwTEEyTVlDVlJBRy4u",
+        "https://forms.office.com/Pages/ResponsePage.aspx?id=MQUmTJOZ3UWuy7-8WpZRbfIHKZs6kJtKs0PKM4LJiuVUQVZNTzlTN1NOT0E3TFpCSk1BWjUxUkZaNi4u"
+      ];
+      const randomIndex = Math.floor(Math.random() * forms.length);
+      const selectedForm = forms[randomIndex];
 
-        document.querySelector("button").disabled = true;
-        document.getElementById("message").style.display = "block";
-        document.getElementById("spinner").style.display = "block";
+      document.querySelector("button").disabled = true;
+      document.getElementById("message").style.display = "block";
+      document.getElementById("spinner").style.display = "block";
 
-        setTimeout(() => {
-          window.location.href = selectedForm;
-        }, 2000);
-      }
-    </script>
-  </body>
+      setTimeout(() => {
+        window.location.href = selectedForm;
+      }, 2000);
+    }
+  </script>
+</body>
 </html>
